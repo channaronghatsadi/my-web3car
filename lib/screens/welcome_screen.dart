@@ -3,121 +3,128 @@ import 'package:my_api/bottom_navbar_t.dart';
 import 'package:my_api/register.dart';
 import 'package:my_api/widgets/loginScreen.dart';
 
-// import 'package:my_api/screens/%E0%B9%89home_page2.dart';
+class welcomeScreen extends StatefulWidget {
+  const welcomeScreen({super.key});
 
-class welcome_screen extends StatelessWidget{
   @override
-  Widget build(BuildContext context){
+  State<welcomeScreen> createState() => _welcomeScreenState();
+}
+
+class _welcomeScreenState extends State<welcomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/bg1.jpg"),
-          fit: BoxFit.cover,
-          opacity: 0.7,
-         )),
-         child: Material(
-          color: Colors.transparent,
-           child: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 65,horizontal: 25),
-              child: Column(
-                //crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                  "ThreeCar",
+      color: Color.fromARGB(255, 14, 12, 118),
+      child: Material(
+        color: Colors.transparent,
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 65, horizontal: 25),
+            child: Column(
+              children: [
+                Text(
+                  "ยินดีต้อนรับ",
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.5,
-                   ),
                   ),
-                  SizedBox(height: 50),
-                  Text("Welcome", style: TextStyle(
-                  color:Colors.white.withOpacity(0.9),
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
-                   ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "3CAR",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
                   ),
-                  SizedBox(height: 50),
-                  Text("โปรเรื่องรถ ซื้อ-ขาย      จบในที่เดียว",
+                ),
+                SizedBox(height: 50),
+                Text(
+                  "โปรเรื่องรถ",
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 30,
                     letterSpacing: 1.2,
                   ),
-                  ),
-                  SizedBox(height:50),
-                  Text("เข้าสู่ระบบ",
+                ),
+                Text(
+                  "ซื้อ-ขาย จบในที่เดียว",
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 30,
                     letterSpacing: 1.2,
                   ),
+                ),
+                SizedBox(height: 100),
+                Card(
+                  color: Color.fromARGB(255, 113, 113, 113),
+                  elevation: 5.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
-                  SizedBox(height:50),
-                  InkWell(onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=>MyButtomNavBar(),
-                    ));
-                  },
-                  child: Ink(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
+                  child: Container(
+                    width: 500, height: 170, // Set the desired width for the card
+                    padding: EdgeInsets.all(15.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center, // Center the content vertically
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                            context,
+                             MaterialPageRoute(
+                              builder: (context) => const PageRegister()));
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 7, 7, 7),
+                            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: Text(
+                            "ลงทะเบียน",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                            context,
+                             MaterialPageRoute(
+                              builder: (context) => const LoginScreen()));
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: Text(
+                            "เข้าสู่ระบบ",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    child: Icon(
-                      Icons.login,
-                    color: Colors.black54,
-                    size: 20,
-                    ),
                   ),
-                  ),
-                  
-                   InkWell(onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=>LoginScreen(),
-                    ));
-                  },
-                  
-                  child: Ink(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    ),
-            
-                    child: Icon(
-                      Icons.person,
-                    color: Colors.black54,
-                    size: 20,
-                    ),
-                  ),
-                  ),
-                   InkWell(onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=>PageRegister(),
-                    ));
-                  },
-                  child: Ink(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Icon(
-                      Icons.pending,
-                    color: Colors.black54,
-                    size: 20,
-                    ),
-                  ),
-                  ),
-
-
-                ],
-              ),
+                ),
+              ],
             ),
-           ),
-         ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -31,6 +31,7 @@ class _MyButtomNavBarState extends State<MyButtomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 14, 12, 118),
         centerTitle: true,
         title: Text('threecar'),
       ),
@@ -43,7 +44,7 @@ class _MyButtomNavBarState extends State<MyButtomNavBar> {
               accountEmail: Text('User@gmail.com'),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
-                //  child: Image.asset('lib/imges/999.jpg'),
+             //     child: Image.asset('images/999.jpg'),
                 ),
               ),
             ),
@@ -86,7 +87,7 @@ class _MyButtomNavBarState extends State<MyButtomNavBar> {
               title: Text('ออกจากระบบ'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => welcome_screen()));
+                    MaterialPageRoute(builder: (context) => welcomeScreen()));
               },
             ),
           ],

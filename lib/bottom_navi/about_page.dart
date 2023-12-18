@@ -8,6 +8,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 14, 12, 118),
         title: Text('ค้นหารถยนต์'),
       ),
       body: Column(children: [
